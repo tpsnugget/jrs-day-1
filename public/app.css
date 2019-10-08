@@ -1,0 +1,17 @@
+i+button {
+   background-color: inherit;
+   border: none;
+}
+
+i+button:focus {
+   outline: none;
+}
+
+form {
+   display: inline-flex;
+}
+
+#displayBlock {
+   display: block;
+   min-width: 80%;
+}
