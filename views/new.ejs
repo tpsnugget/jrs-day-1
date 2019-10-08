@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<div class="ui container">
+
+   <h1>You are on the Show New Blog Page</h1>
+
+   <form id="displayBlock" action="/blogs" method="POST">
+      <input type="text" placeholder="Title" name="blog[title]">
+      <input type="text" placeholder="Subject" name="blog[subject]">
+      <input type="text" placeholder="Image URL" name="blog[image]">
+         <textarea type="text" rows="15" cols="50" placeholder="Blog Entry" name="blog[text]"></textarea>
+         <button>Submit Blog Entry</button>
+   </form>
+
+</div>
+
+<% include partials/footer %>
