@@ -1,58 +1,36 @@
 <% include partials/header %>
 
-<div class='ui container'>
+<body class="landing">
 
-   <h1>You are on the Landing Page</h1>
+   <div class='container'>
 
-   <h2>What would you like to do?</h2>
-
-   <!-- SUBJECTS FORM / BUTTON -->
-   <form action="/blogs/subjects" method="GET">
-      <div class="ui labeled button" tabindex="0">
-         <div class="ui button">
-            <i class="sitemap icon"></i><button>View Subjects</button> 
-         </div>
-         <a class="ui basic label">
-
-            <!-- FIX ME FIX ME -->
-            <!-- FIX ME FIX ME -->
-            <!-- FIX ME FIX ME -->
-            <!-- FIX ME FIX ME -->
-            2,048
-         </a>
+      <div id="landingJumboTron" class="jumbotron mt-3">
+         <h1 class="display-4">What Would You Like To Do?</h1>
       </div>
-   </form>
 
-   <!-- ADD A BLOG ENTRY FORM / BUTTON -->
-   <form id="newBlogButton" action="/blogs/new" method="GET">
-      <div class="ui labeled button" tabindex="0">
-         <div class="ui button">
-            <i class="keyboard icon"></i><button>Add a Blog Entry</button>
+      <div class="container">
+
+         <div class="row">
+
+            <form action="/blogs/subjects" method="GET">
+
+               <button class="btn btn-outline-light mr-3">View Subjects</button>
+               <span class="align-self-center"> Number of Subjects: <%= numBlogs %> </span>
+
+            </form>
+
          </div>
-   </form>
-   <!-- <a class="ui basic label">
+         <div class="row mt-3">
+            <form action="/blogs/new" method="GET">
 
-         // FIX ME FIX ME
-         2,048
-      </a> -->
-</div>
-<!-- <div class="ui left labeled button" tabindex="0">
-      <a class="ui basic right pointing label">
-         2,048
-      </a>
-      <div class="ui button">
-         <i class="heart icon"></i> Like
+               <button class="btn btn-outline-light">Add A Blog Entry</button>
+
+            </form>
+
+         </div>
+
       </div>
+
    </div>
-   <div class="ui left labeled button" tabindex="0">
-      <a class="ui basic label">
-         1,048
-      </a>
-      <div class="ui icon button">
-         <i class="fork icon"></i>
-      </div>
-   </div> -->
 
-</div>
-
-<% include partials/footer %>
+   <% include partials/footer %>

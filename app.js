@@ -1,9 +1,9 @@
 var express = require('express'),
-        app = express(),
- bodyParser = require('body-parser'),
+   app = express(),
+   bodyParser = require('body-parser'),
    mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/blog_exercise', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/blog_exercise', { useNewUrlParser: true })
 
 var blogSchema = new mongoose.Schema({
    title: String,
@@ -14,15 +14,11 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model('Blog', blogSchema)
 
-
-
-
-
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 // Returns key-value pairs from the submitting form, see bodyParser.urlencoded([options])
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //=======================
 //       ROUTES
@@ -30,7 +26,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // RE-DIRECTS TO LANDING PAGE
 app.get('/', (req, res) => {
-   res.render('landing')
+   var numBlogs = Blog.count('blogs')
+   // numBlogs = numBlogs.length
+   console.log(numBlogs)
+   res.render('landing', { numBlogs: numBlogs })
 })
 
 // INDEX ROUTE
@@ -50,8 +49,8 @@ app.post('/blogs', (req, res) => {
    //             text: req.body.text}
    var data = req.body.blog
    Blog.create(data, (err, blog) => {
-      if (err) {err}
-      else {res.render('show', {blog: blog})}
+      if (err) { err }
+      else { res.render('show', { blog: blog }) }
    })
 })
 
@@ -63,7 +62,7 @@ app.get('/blogs/new', (req, res) => {
 // SHOW ROUTE
 app.get('/blogs/:id', (req, res) => {
    var blog = req.query.title
-   res.render('show', {blog: blog})
+   res.render('show', { blog: blog })
 })
 
 //=======================
