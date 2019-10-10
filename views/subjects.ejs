@@ -3,7 +3,9 @@
 <h1>You are on the Subjects Show Page</h1>
 
 <p>
-   <%= blog %>
+  <% blog.forEach((e) => { %>
+  <p> <%= e.subject %> </p>
+  <% }) %>
 </p>
 
 <% include partials/footer %>

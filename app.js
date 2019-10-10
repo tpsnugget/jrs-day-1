@@ -39,7 +39,9 @@ app.get('/blogs', (req, res) => {
 
 
 app.get('/blogs/subjects', (req, res) => {
-   res.render('subjects')
+   Blog.find({}, (err, blog) => {
+      res.render('subjects', {blog: blog})
+   })
 })
 
 app.post('/blogs', (req, res) => {
