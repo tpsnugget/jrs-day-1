@@ -1,11 +1,15 @@
 <% include partials/header %>
 
-<h1>You are on the Subjects Show Page</h1>
+<div class="container">
 
-<p>
-  <% blog.forEach((e) => { %>
-  <p> <%= e.subject %> </p>
-  <% }) %>
-</p>
+  <h1>You are on the Subjects Show Page</h1>
+
+  <p>
+    <% blog.forEach((e) => { %>
+    <p> <%= e %> </p>
+    <% }) %>
+  </p>
+
+</div>
 
 <% include partials/footer %>

@@ -10,3 +10,6 @@
    View Subjects currently generates an error.
       Moved the res.render() inside the Blog.find() function. Scope issue.
       Now each subject shows up as a paragraph.
+
+# Version 4:
+   Remove duplicate subjects before display. DONE.
